@@ -50,7 +50,13 @@ public class StackLinkedList<T> {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		StackLinkedList<Integer> list = new StackLinkedList<Integer>();
+		System.out.println("Is stack empty ==> " + list.isEmpty());
 		list.push(5);
+		list.push(7);
+		System.out.println("Item popped out is " + list.pop());
+		list.push(8);
+		System.out.println("Top of the stack is " + list.peek());
+		System.out.println("Is stack empty ==> " + list.isEmpty());
 	}
 
 }
