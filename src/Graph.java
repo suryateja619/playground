@@ -39,6 +39,25 @@ public class Graph {
 		}
 	}
 	
+	void BFS(int s) {
+		boolean[] visited = new boolean[V];
+		LinkedList<Integer> queue = new LinkedList<Integer>();
+		visited[s] = true;
+		queue.add(s);
+		while (queue.size() != 0) {
+			s = queue.poll();
+			System.out.println(s+ " ");
+			Iterator<Integer> i = adj[s].listIterator();
+			while (i.hasNext()) {
+				int n = i.next();
+				if (!visited[n]) {
+					visited[n] = true;
+					queue.add(n);
+				}
+			}
+		}
+	}
+	
 	void DFS(int v) {
 		boolean visited[] = new boolean[V];
 		DFSUtil(v, visited);
@@ -58,6 +77,9 @@ public class Graph {
         g.addEdge(3, 3);
         System.out.println("Starting the Depth first traversal from 1");
         g.DFS(1);
+        
+        System.out.println("Starting the Breadth first traveseral from 1");
+        g.BFS(1);
 	}
 
 }
